@@ -1,5 +1,6 @@
 package com.team1091.tanks
 
+import com.team1091.tanks.ai.BestTankEver
 import com.team1091.tanks.ai.TestAi
 import com.team1091.tanks.entity.Pickup
 import com.team1091.tanks.entity.Tank
@@ -31,7 +32,7 @@ class TankSim : PApplet() {
             bounds = size,
             tanks = mutableListOf(
                 Tank(
-                    ai = TestAi(),
+                    ai = BestTankEver(),
                     life = TANK_MAX_LIFE,
                     pos = Vec2(100.0, 100.0),
                     facing = 0.0,
@@ -39,7 +40,7 @@ class TankSim : PApplet() {
                 ),
 
                 Tank(
-                    ai = TestAi(),
+                    ai = BestTankEver(),
                     life = TANK_MAX_LIFE,
                     pos = Vec2(size.x - 100.0, size.y - 100.0),
                     facing = Math.PI,
