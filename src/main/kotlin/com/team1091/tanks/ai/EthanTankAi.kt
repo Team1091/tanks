@@ -39,8 +39,6 @@ class EthanTankAi() : AI {
         var turret = 0.0
         if (closesttank != null) {
             if(lastTankPos != null){
-                // calc projected pos
-            } else {
                 turret = turnto(closesttank.pos - tank.pos, tank.facing + tank.turretFacing)
             }
 
@@ -50,7 +48,7 @@ class EthanTankAi() : AI {
             forward = speed,
             turn = turn,
             turnTurret = turret,
-            fire = (closesttank?.pos?.distanceTo(tank.pos) ?: Double.MAX_VALUE) < 300,
+            fire = (closesttank?.pos?.distanceTo(tank.pos) ?: Double.MAX_VALUE) < 200,
             collect = closestpickup?.pos?.distanceTo(tank.pos) ?: Double.MAX_VALUE < 5
         )
     }
